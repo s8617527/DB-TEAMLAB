@@ -11,10 +11,8 @@ import requests
 from fake_useragent import UserAgent
 from lxml import html
 import csv
-def yahoo_get(yahoourl):
+def yahoo_get(yahoourl, ps):
     print("yahoo: ", yahoourl)
-    driver.get(yahoourl)
-    ps = driver.page_source
     sp = BeautifulSoup(ps, "lxml")
     yaitn = []
     yaitp = []
@@ -23,7 +21,6 @@ def yahoo_get(yahoourl):
         name = sp.find("div",{'class':'main'}).findAll("span", class_ = re.compile('2HWui'))
         price = sp.findAll(class_ = re.compile('31jkj'))
         url = sp.findAll("a", class_ = re.compile('3LORP'))
-        print(len(url))
         for itnn in name:
             yaitn.append(itnn.text)
         for itpp in price:
@@ -42,6 +39,3 @@ def yahoo_get(yahoourl):
         temp = [yaitn[item], yaitp[item], yaiturl[item]]
         writer.writerow(temp)
     c.close()
-    print(len(yaitn), " ", len(yaitp), " ", len(yaiturl))
-    for item in range(0, len(yaiturl)):
-        print(yaiturl[item])

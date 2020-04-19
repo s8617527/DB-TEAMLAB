@@ -11,10 +11,7 @@ import requests
 from fake_useragent import UserAgent
 from lxml import html
 import csv
-def momo_get(momourl):
-    driver.get(momourl)
-    ps = driver.page_source
-
+def momo_get(momourl, ps):
     sp = BeautifulSoup(ps, "lxml")
     root = 'https://www.momoshop.com.tw'
     moitn = []
@@ -42,6 +39,3 @@ def momo_get(momourl):
         temp = [moitn[item], moitp[item], moiturl[item]]
         writer.writerow(temp)   
     c.close()
-    print(len(moitn), " ", len(moitp), " ", len(moiturl))
-    for item in range(0, len(moiturl)):
-        print(moiturl[item])

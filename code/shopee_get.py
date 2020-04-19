@@ -46,5 +46,3 @@ def shp_get(shpurl):
         temp = [spitems[item], spprices[item], spurls[item]]
         writer.writerow(temp)
     c.close()
-    for item in range(0, len(spitems)):
-        print(spurls[item])
