@@ -3,20 +3,7 @@
 ## 0418討論內容
 ### 主題：大學系所介紹
 ### 架構說明：
-```graphviz
-digraph hierarchy {
-
-                nodesep=1.0 // increases the separation between nodes
-                
-                node [color=Red,fontname=Courier,shape=box] //All nodes will this shape and colour
-                edge [color=Blue, style=dashed] //All the lines look like this
-
-                Headteacher->{Deputy1 Deputy2 BusinessManager}
-                Deputy1->{Teacher1 Teacher2}
-                BusinessManager->ITManager
-                {rank=same;ITManager Teacher1 Teacher2}  // Put them on the same level
-}
-```
+![](https://i.imgur.com/wumvn6R.jpg)
 - 買家搜尋:
     1.	使用者可以透過網站上的搜尋關鍵字來尋找各網站不同的商品
     2.	依照商品連結網站做成表格
