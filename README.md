@@ -6,19 +6,15 @@
 ```graphviz
 digraph hierarchy {
 
-                nodesep=1.0
+                nodesep=1.0 // increases the separation between nodes
                 
-                node [fontname=Courier,shape=box]
+                node [color=Red,fontname=Courier,shape=box] //All nodes will this shape and colour
+                edge [color=Blue, style=dashed] //All the lines look like this
 
-                主頁->{大學校系 18學群 落點分析}
-                大學校系->各地區大學
-                各地區大學->各大學校系
-		18學群->各學群大學
-		落點分析->{學測 指考}
-		{學測 指考}->可能大學學系
-		{各大學校系 各學群大學 可能大學學系}->各校系資料
-		
-                {rank=same;各大學校系 各學群大學 可能大學學系}
+                Headteacher->{Deputy1 Deputy2 BusinessManager}
+                Deputy1->{Teacher1 Teacher2}
+                BusinessManager->ITManager
+                {rank=same;ITManager Teacher1 Teacher2}  // Put them on the same level
 }
 ```
 - 買家搜尋:
